@@ -50,13 +50,4 @@ class ChooseLevelFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    companion object {
-
-        const val NAME = "ChooseLevelFragment"
-
-        fun newInstance(): ChooseLevelFragment {
-            return ChooseLevelFragment()
-        }
-    }
 }

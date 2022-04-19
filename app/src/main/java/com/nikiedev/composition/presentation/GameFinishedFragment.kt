@@ -21,11 +21,6 @@ class GameFinishedFragment : Fragment() {
     private val binding: FragmentGameFinishedBinding
         get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding is null")
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        parseArgs()
-//    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -89,29 +84,7 @@ class GameFinishedFragment : Fragment() {
         _binding = null
     }
 
-    /*private fun parseArgs() {
-//        gameResult = requireArguments().getSerializable(KEY_GAME_RESULT) as GameResult
-        requireArguments().getParcelable<GameResult>(KEY_GAME_RESULT)?.let {
-            gameResult = it
-        }
-    }*/
-
     private fun retryGame() {
-//        requireActivity().supportFragmentManager.popBackStack(ChooseLevelFragment.NAME, 0)
-//        requireActivity().supportFragmentManager.popBackStack(GameFragment.NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         findNavController().popBackStack()
-    }
-
-    companion object {
-
-        const val KEY_GAME_RESULT = "game_result"
-
-//        fun newInstance(gameResult: GameResult): GameFinishedFragment {
-//            return GameFinishedFragment().apply {
-//                arguments = Bundle().apply {
-//                    putParcelable(KEY_GAME_RESULT, gameResult)
-//                }
-//            }
-//        }
     }
 }

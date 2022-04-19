@@ -19,8 +19,6 @@ import com.nikiedev.composition.domain.entity.Level
 
 class GameFragment : Fragment() {
 
-//    private lateinit var level: Level
-
     private val args by navArgs<GameFragmentArgs>()
 
     private val viewModelFactory by lazy {
@@ -45,11 +43,6 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding: FragmentGameBinding
         get() = _binding ?: throw RuntimeException("FragmentGameBinding is null")
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        parseArgs()
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -120,29 +113,9 @@ class GameFragment : Fragment() {
         _binding = null
     }
 
-//    private fun parseArgs() {
-//        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
-//            level = it
-//        }
-//    }
-
     private fun launchGameFinishedFragment(gameResult: GameResult) {
         findNavController().navigate(
             GameFragmentDirections.actionGameFragmentToGameFinishedFragment(gameResult)
         )
-    }
-
-    companion object {
-
-        const val NAME = "GameFragment"
-        const val KEY_LEVEL = "level"
-
-        fun newInstance(level: Level): GameFragment {
-            return GameFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(KEY_LEVEL, level)
-                }
-            }
-        }
     }
 }
